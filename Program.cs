@@ -16,6 +16,6 @@ services.AddAppServices(configuration);
 var app = builder.Build();
 
 app.UseStaticFiles();
-
 app.MapDefaultControllerRoute();
+
 app.Run();
