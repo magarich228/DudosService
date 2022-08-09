@@ -1,0 +1,13 @@
+﻿{
+  "EmailSender": {
+    "Credentials": {
+      "Email": "kirillgroshev152@yandex.ru",
+      "Password": "ykyvkoynhysrthps"
+    },
+    "SmtpOptions": {
+      "Host": "smtp.yandex.ru",
+      "Port": "465",
+      "UseSsl": "true"
+    }
+  }
+}

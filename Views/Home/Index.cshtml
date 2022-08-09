@@ -1,0 +1,65 @@
+﻿@using MagarichEmailService.Controllers
+@using System.Text
+
+@model HomeController.MailingModel
+
+@{
+    Layout = null;
+    string title = "ESender";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link href="~/CSS/styles.css" rel="stylesheet" type="text/css" />
+    <title>@title</title>
+</head>
+<body>
+    <div class="main-container">
+        <div class="form-container">
+            <form method="post" class="index-form">
+                <div class="left-column">
+                    <label id="recipient-label">Получатель</label>
+                    <div class="email-input-container">
+                        <button class="email-input-remove-button form-element">-</button>
+                        <input type="email" name="recipients" class="form-element" value="@Model?.Recipients?.ElementAt(0)" />
+                        <button class="email-input-add-button form-element">+</button>
+                    </div>
+                </div>
+                <div class="right-column">
+                    <label>Кол-во сообщений</label>
+                    <input type="number" name="repeats" class="form-element" value="@Model?.Repeats" />
+                    <label>Тема сообщения</label>
+                    <input type="text" name="subject" class="form-element" value="@Model?.Subject" />
+                    <label>Текст сообщения</label>
+                    <input type="text" name="message" class="form-element" value="@Model?.Message" />
+                    <div class="inline-checkbox-container form-element">
+                        <label>Рандомные темы</label>
+                        <input type="checkbox" name="randomThemes" />
+                    </div>
+                    <input type="submit" class="form-element" value="Отправить" />
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+<script src="JS/button.js"></script>
+</html>
+
+@functions {
+    public string RecipientsToString(IEnumerable<string>? recipients)
+    {
+        if (recipients is null || recipients.Count() == 0)
+            return string.Empty;
+
+        StringBuilder builder = new StringBuilder();
+
+        foreach (var recipient in recipients)
+        {
+            builder.Append(recipient);
+        }
+
+        return builder.ToString();
+    }
+}

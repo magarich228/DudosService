@@ -1,0 +1,67 @@
+﻿body{
+    background-color: cornsilk;
+}
+
+.main-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 500px;
+}
+
+.form-container {
+    width: auto;
+    height: auto;
+    padding: 25px 25px 25px 0px;
+
+    background-color: lightsalmon;
+
+    border: 1px solid #6a92c3;
+    border-radius: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container .index-form{
+    display: flex;
+}
+
+.form-container .index-form div{
+    margin: 0px 5px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+#recipient-label{
+    margin-left: 30px;
+}
+
+.form-container .index-form .left-column{
+    margin-right: 30px;
+}
+
+.form-container .index-form .left-column .email-input-container{
+    flex-direction: row;
+}
+
+.form-container .index-form .left-column .email-input-container .email-input-remove-button{
+    visibility: hidden;
+}
+
+.form-container .index-form .form-element{
+    border-radius: 7px;
+}
+
+.form-container .index-form .right-column .inline-checkbox-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.form-container .index-form .right-column .form-element{
+    margin-bottom: 7px;
+}
